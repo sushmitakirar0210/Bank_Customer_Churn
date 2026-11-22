@@ -134,7 +134,7 @@ with tab1:
             )
         )
         fig_gauge.update_layout(height=280, margin=dict(t=40, b=10, l=20, r=20))
-        st.plotly_chart(fig_gauge, use_container_width=True)
+        st.plotly_chart(fig_gauge, width="stretch")
 
         st.markdown("#### Why did the model assign this score? (SHAP Waterfall)")
         shap_single = explain_single_customer(
@@ -264,7 +264,7 @@ with tab3:
         line_color="red",
         annotation_text="Threshold",
     )
-    st.plotly_chart(fig_hist, use_container_width=True)
+    st.plotly_chart(fig_hist, width="stretch")
 
 # ==========================================
 # TAB 4: GLOBAL EXPLAINABILITY & BENCHMARKS
@@ -275,7 +275,7 @@ with tab4:
     st.markdown(
         "#### 1. Model Benchmarking Summary (Stratified 5-Fold CV & Test Set)"
     )
-    st.dataframe(benchmark, use_container_width=True)
+    st.dataframe(benchmark, width="stretch")
 
     st.markdown(
         "#### 2. Global SHAP Feature Importance (Behavioral vs. Demographic)"
