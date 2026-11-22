@@ -1,0 +1,18 @@
+# 1. Overwrite .gitignore with the proper rules (removes the '*' wildcard)
+@"
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.idea/
+"@ | Set-Content -Encoding UTF8 .gitignore
+
+# 2. Set the exact GitHub repository URL and pull existing files
+git remote set-url origin https://github.com
+git pull origin main --allow-unrelated-histories
+
+# 3. Stage, commit, and push all project files
+git add .
+git commit -m "Add src pipeline, dataset, trained models, and updated app"
+git push -u origin main
